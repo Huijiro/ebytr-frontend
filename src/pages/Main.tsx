@@ -1,11 +1,12 @@
 import Header from '../components/Header';
 import Template from '../components/Template';
+import { ThemeProvider } from '../utils/themeContext';
 
 function Main() {
   return (
-    <>
+    <ThemeProvider>
       <Header />
-      <Template mode="dark">
+      <Template>
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi optio
           obcaecati facilis nam eum magni temporibus, minus quos illo. Magni
@@ -24,7 +25,7 @@ function Main() {
           quia, sit modi, labore vero unde illo.
         </p>
       </Template>
-    </>
+    </ThemeProvider>
   );
 }
 

@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+import { ThemeContext } from '../../utils/themeContext';
 import CSS from './button.module.css';
 
 interface Props {
@@ -13,9 +15,14 @@ interface Props {
 }
 
 function Button({ onClick, children }: Props) {
+  const { mode } = useContext(ThemeContext);
   return (
-    <button onClick={onClick} className={CSS.button} type="button">
-      {children}
+    <button
+      onClick={onClick}
+      className={mode === 'light' ? CSS['button-light'] : CSS['button-dark']}
+      type="button"
+    >
+      <div>{children}</div>
     </button>
   );
 }

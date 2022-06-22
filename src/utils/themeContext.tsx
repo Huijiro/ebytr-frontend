@@ -1,7 +1,14 @@
 import React, { useMemo, useState } from 'react';
 
 interface Context {
+  /**
+   * Theme mode
+   */
   mode: 'light' | 'dark';
+  /**
+   * Set theme mode
+   * @param mode
+   * */
   setMode: React.Dispatch<React.SetStateAction<string>>;
 }
 
