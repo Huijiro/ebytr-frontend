@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useContext } from 'react';
+import { ThemeContext } from '../../utils/themeContext';
 import Button from '../Button';
 
 function ColorToggleButton() {
-  const [mode, setMode] = useState('light');
+  const { mode, setMode } = useContext(ThemeContext);
 
   const toggleMode = () => {
     setMode(mode === 'light' ? 'dark' : 'light');

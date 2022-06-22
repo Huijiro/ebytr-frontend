@@ -1,12 +1,14 @@
-import Header from '../components/Header';
-import Template from '../components/Template';
+import Header from '../../components/Header';
+import Template from '../../components/Template';
+import Text from '../../components/Text';
+import { ThemeProvider } from '../../utils/themeContext';
 
 function Main() {
   return (
-    <>
-      <Header />
-      <Template mode="dark">
-        <p>
+    <ThemeProvider>
+      <Template>
+        <Header />
+        <Text type="p">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi optio
           obcaecati facilis nam eum magni temporibus, minus quos illo. Magni
           nesciunt facilis ipsum cumque maxime esse sequi, repellendus
@@ -22,9 +24,9 @@ function Main() {
           eius, eaque nostrum ullam consequatur nobis illo reprehenderit, enim
           ipsa illum! Repellat totam laboriosam officia ut optio excepturi,
           quia, sit modi, labore vero unde illo.
-        </p>
+        </Text>
       </Template>
-    </>
+    </ThemeProvider>
   );
 }
 
