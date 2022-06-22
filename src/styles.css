@@ -6,3 +6,11 @@
   font-family: 'Roboto', sans-serif;
   transition: all 0.2s;
 }
+
+html,
+body,
+#root,
+.App {
+  height: 100%;
+  width: 100%;
+}

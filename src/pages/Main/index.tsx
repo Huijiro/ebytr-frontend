@@ -1,13 +1,13 @@
-import Header from '../components/Header';
-import Template from '../components/Template';
-import Text from '../components/Text';
-import { ThemeProvider } from '../utils/themeContext';
+import Header from '../../components/Header';
+import Template from '../../components/Template';
+import Text from '../../components/Text';
+import { ThemeProvider } from '../../utils/themeContext';
 
 function Main() {
   return (
     <ThemeProvider>
-      <Header />
       <Template>
+        <Header />
         <Text type="p">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi optio
           obcaecati facilis nam eum magni temporibus, minus quos illo. Magni
