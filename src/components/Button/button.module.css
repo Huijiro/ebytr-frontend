@@ -1,0 +1,10 @@
+.button {
+  font-size: 1.25em;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  transition: all 0.2s;
+}
+
+.button:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
