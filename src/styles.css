@@ -4,7 +4,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
-  transition: all 0.2s;
+  transition: all 300ms;
 }
 
 html,
@@ -13,4 +13,9 @@ body,
 .App {
   height: 100%;
   width: 100%;
+}
+
+.App {
+  --primary: #0070f3;
+  --secondary: #ec0000;
 }

@@ -1,0 +1,15 @@
+.container-light {
+  background-color: hsl(0, 0%, 95%);
+  border: hsl(0, 0%, 80%) solid 1px;
+}
+
+.container-dark {
+  border: hsl(0, 0%, 35%) solid 1px;
+  background-color: hsl(0, 0%, 25%);
+}
+
+.base {
+  margin: 2em 6em;
+  border-radius: 0.2em;
+  padding: 1em;
+}

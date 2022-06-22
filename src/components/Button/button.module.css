@@ -1,21 +1,33 @@
-.button-light {
-  font-size: 1.25em;
+.button[data-mode='light'] {
   padding: 0.5rem;
   border: 1px solid #ccc;
   background-color: hsla(0, 0%, 100%);
 }
 
-.button-light:hover {
+.button[data-mode='light']:hover {
   background-color: hsla(0, 0%, 90%);
 }
 
-.button-dark {
-  font-size: 1.25em;
+.button[data-mode='dark'] {
+  color: hsl(0, 0%, 90%);
+  font-weight: 400;
   padding: 0.5rem;
   border: 1px solid rgb(92, 92, 92);
-  background-color: hsla(0, 0%, 10%);
+  background-color: hsl(0, 0%, 100%, 10%);
 }
 
-.button-dark:hover {
-  background-color: hsla(0, 0%, 20%);
+.button[data-mode='dark']:hover {
+  background-color: hsl(0, 0%, 100%, 20%);
+}
+
+.button[data-mode='primary'] {
+  color: hsl(0, 0%, 90%);
+  padding: 0.5rem;
+  background-color: var(--primary);
+}
+
+.button[data-mode='secondary'] {
+  color: hsl(0, 0%, 90%);
+  padding: 0.5rem;
+  background-color: var(--secondary);
 }
