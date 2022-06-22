@@ -1,0 +1,13 @@
+.dark {
+  background-color: #212121;
+  color: #fff;
+}
+
+.light {
+  background-color: #fff;
+  color: #212121;
+}
+
+.base {
+  padding: 2em;
+}
