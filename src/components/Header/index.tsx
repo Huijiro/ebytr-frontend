@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { ThemeContext } from '../../utils/themeContext';
 import ColorToggleButton from '../ColorModeButton';
+import Text from '../Text';
 import CSS from './header.module.css';
 
 function Header() {
@@ -8,7 +9,7 @@ function Header() {
   return (
     <div className={mode === 'light' ? CSS.light : CSS.dark}>
       <div className={CSS.header}>
-        <h1>Task Manager</h1>
+        <Text type="h1">Task Manager</Text>
         <ColorToggleButton />
       </div>
     </div>
