@@ -1,7 +1,9 @@
+import Main from './pages/Main';
+
 function App() {
   return (
     <div className="App">
-      <h1>This is a boilerplate react project</h1>
+      <Main />
     </div>
   );
 }
