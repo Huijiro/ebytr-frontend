@@ -9,7 +9,9 @@ function ColorToggleButton() {
     setMode(mode === 'light' ? 'dark' : 'light');
   };
   return (
-    <Button onClick={toggleMode}>{mode === 'light' ? <>☀️</> : <>🌙</>}</Button>
+    <Button onClick={toggleMode} size="large">
+      {mode === 'light' ? <>☀️</> : <>🌙</>}
+    </Button>
   );
 }
 
