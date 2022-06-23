@@ -23,6 +23,7 @@ function Window({ title, setOpen, children }: Props) {
             onClick={() => {
               setOpen(false);
             }}
+            color="secondary"
           >
             X
           </Button>

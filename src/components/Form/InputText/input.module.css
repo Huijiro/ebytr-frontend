@@ -1,0 +1,28 @@
+.input {
+  font-size: 1.25em;
+  padding: 0.2em;
+}
+
+.input[data-mode='light'] {
+  background-color: hsl(0, 0%, 100%);
+  border: 1px solid hsl(0, 0%, 80%);
+}
+
+.input[data-mode='light']:focus {
+  border: 1px solid hsl(0, 0%, 40%);
+}
+
+.input[data-mode='dark'] {
+  background-color: hsl(0, 0%, 35%);
+  border: 1px solid hsl(0, 0%, 45%);
+}
+
+.input[data-mode='dark']:focus {
+  border: 1px solid hsl(0, 0%, 80%);
+  background-color: hsl(0, 0%, 30%);
+}
+
+.input[data-mode='dark']::placeholder {
+  color: hsl(0, 0%, 80%);
+  font-weight: 100;
+}
