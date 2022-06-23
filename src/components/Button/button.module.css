@@ -23,11 +23,19 @@
 .button[data-mode='primary'] {
   color: hsl(0, 0%, 90%);
   padding: 0.5rem;
-  background-color: var(--primary);
+  background-color: hsl(220, 100%, 50%);
+}
+
+.button[data-mode='primary']:hover {
+  background-color: hsl(220, 100%, 55%);
 }
 
 .button[data-mode='secondary'] {
   color: hsl(0, 0%, 90%);
   padding: 0.5rem;
-  background-color: var(--secondary);
+  background-color: hsl(0, 100%, 50%);
+}
+
+.button[data-mode='secondary']:hover {
+  background-color: hsl(0, 100%, 55%);
 }

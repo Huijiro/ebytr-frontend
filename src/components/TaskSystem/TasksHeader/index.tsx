@@ -1,13 +1,12 @@
 import Button from '../../Button';
 import Text from '../../Text';
+import CSS from './tasksHeader.module.css';
 
 function TasksHeader() {
   return (
-    <div>
-      <Text type="h3">Tasks</Text>
-      <Button onClick={() => {}} color="primary">
-        Add Task
-      </Button>
+    <div className={CSS.header}>
+      <Text type="h2">Tasks</Text>
+      <Button color="primary">Add Task</Button>
     </div>
   );
 }

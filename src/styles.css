@@ -14,8 +14,3 @@ body,
   height: 100%;
   width: 100%;
 }
-
-.App {
-  --primary: #0070f3;
-  --secondary: #ec0000;
-}
