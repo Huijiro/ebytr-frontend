@@ -7,7 +7,7 @@
 }
 
 .footer[data-mode='light'] {
-  background-color: hsl(0, 0%, 80%);
+  background-color: hsl(0, 0%, 90%);
 }
 
 .footer[data-mode='dark'] {

@@ -22,7 +22,9 @@ function Task({ task }: Props) {
   return (
     <div className={CSS.container} data-mode={mode}>
       <Text type="h3">{task.title}</Text>
-      <Text type="p">{shotenDescripition(task.description)}</Text>
+      <Text type="p" color="secondary">
+        {shotenDescripition(task.description)}
+      </Text>
       <div className={CSS.buttons}>
         <Button>✏️</Button>
         <Button>🗑️</Button>

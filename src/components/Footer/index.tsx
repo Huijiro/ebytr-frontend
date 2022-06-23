@@ -7,7 +7,9 @@ function Footer() {
   const { mode } = useContext(ThemeContext);
   return (
     <footer className={CSS.footer} data-mode={mode}>
-      <Text type="h4">Made by: Huijiro</Text>
+      <Text type="h4" color="secondary">
+        Made by: Huijiro
+      </Text>
     </footer>
   );
 }
