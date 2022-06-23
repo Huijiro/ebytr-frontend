@@ -22,7 +22,7 @@ const RandomTasks: Task[] = [
     description: 'Task 2 description',
     status: {
       id: 1,
-      name: Status.TODO,
+      name: Status.ONGOING,
     },
   },
   {
@@ -33,7 +33,7 @@ const RandomTasks: Task[] = [
     description: 'Task 3 description',
     status: {
       id: 1,
-      name: Status.TODO,
+      name: Status.DONE,
     },
   },
 ];

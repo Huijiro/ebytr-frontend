@@ -1,0 +1,19 @@
+.status {
+  height: 100%;
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.status[data-status='done'] {
+  background-color: hsl(100, 60%, 50%);
+  border: 1px solid hsl(100, 60%, 45%);
+}
+
+.status[data-status='ongoing'] {
+  background-color: hsl(200, 60%, 50%);
+  border: 1px solid hsl(200, 60%, 45%);
+}
+
+.status[data-status='todo'] {
+  background-color: hsl(0, 60%, 50%);
+  border: 1px solid hsl(0, 60%, 45%);
+}
