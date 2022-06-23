@@ -24,8 +24,9 @@ function Window({ title, setOpen, children }: Props) {
               setOpen(false);
             }}
             color="secondary"
+            className={CSS.close}
           >
-            X
+            ✕
           </Button>
         </div>
         <div className={CSS.body}>{children}</div>

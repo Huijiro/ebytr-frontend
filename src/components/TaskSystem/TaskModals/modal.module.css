@@ -32,3 +32,11 @@
   margin-bottom: 1em;
   gap: 1em;
 }
+
+.close {
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -32,6 +32,10 @@ interface Props {
   /* Disable the button */
 
   disable?: boolean;
+
+  /* Class name */
+
+  className?: string;
 }
 
 const defaultProps = {
@@ -40,9 +44,18 @@ const defaultProps = {
   color: undefined,
   type: 'button',
   disable: false,
+  className: '',
 };
 
-function Button({ onClick, children, size, color, type, disable }: Props) {
+function Button({
+  onClick,
+  children,
+  size,
+  color,
+  type,
+  disable,
+  className,
+}: Props) {
   const { mode } = useContext(ThemeContext);
 
   return (
@@ -50,7 +63,7 @@ function Button({ onClick, children, size, color, type, disable }: Props) {
       onClick={onClick}
       data-mode={color || mode}
       style={{ fontSize: size }}
-      className={CSS.button}
+      className={`${className} ${CSS.button}`}
       // eslint-disable-next-line react/button-has-type
       type={type}
       disabled={disable}
