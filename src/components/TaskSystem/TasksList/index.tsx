@@ -1,22 +1,21 @@
 import { useEffect, useState } from 'react';
-import Task from '../../../interfaces/task.interface';
+import TaskI from '../../../interfaces/task.interface';
 import Text from '../../Text';
+import Task from '../Task';
 import RandomTasks from './mock';
 import CSS from './tasksList.module.css';
 
 function TasksList() {
-  const [tasks, setTasks] = useState<Task[]>(RandomTasks);
+  const [tasks, setTasks] = useState<TaskI[]>(RandomTasks);
 
-  useEffect(() => {
-    setTasks([]);
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <div className={CSS.container}>
       {tasks.length === 0 ? (
         <Text type="h3">No tasks, feel free to add one.</Text>
       ) : (
-        <h1>Tasks</h1>
+        tasks.map((task) => <Task key={task.id} task={task} />)
       )}
     </div>
   );
