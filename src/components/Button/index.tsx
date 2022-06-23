@@ -24,15 +24,25 @@ interface Props {
    * */
 
   size?: 'small' | 'medium' | 'large';
+
+  /* Type of the button */
+
+  type?: 'button' | 'submit' | 'reset';
+
+  /* Disable the button */
+
+  disable?: boolean;
 }
 
 const defaultProps = {
   onClick: () => {},
   size: 'medium',
   color: undefined,
+  type: 'button',
+  disable: false,
 };
 
-function Button({ onClick, children, size, color }: Props) {
+function Button({ onClick, children, size, color, type, disable }: Props) {
   const { mode } = useContext(ThemeContext);
 
   return (
@@ -41,7 +51,9 @@ function Button({ onClick, children, size, color }: Props) {
       data-mode={color || mode}
       style={{ fontSize: size }}
       className={CSS.button}
-      type="button"
+      // eslint-disable-next-line react/button-has-type
+      type={type}
+      disabled={disable}
     >
       <div>{children}</div>
     </button>

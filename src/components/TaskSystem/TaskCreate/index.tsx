@@ -1,6 +1,7 @@
-import { SyntheticEvent } from 'react';
+import { SyntheticEvent, useEffect, useState } from 'react';
+import Button from '../../Button';
 import InputText from '../../Form/InputText';
-import Text from '../../Text';
+import InputTextArea from '../../Form/InputTextArea';
 import CSS from './create.module.css';
 
 interface FormOptions {
@@ -13,24 +14,36 @@ interface FormOptions {
 }
 
 function TaskCreate() {
+  const [form, setForm] = useState<FormOptions>({
+    title: { value: '' },
+    description: { value: '' },
+  });
+
+  const [canSubmit, setCanSubmit] = useState(false);
+
+  const change = (e: SyntheticEvent) => {
+    const { id, value } = e.target as HTMLInputElement;
+    setForm({ ...form, [id]: { value } });
+  };
+
+  useEffect(() => {
+    setCanSubmit(
+      form.title.value.length > 5 && form.description.value.length > 10,
+    );
+  }, [form]);
+
   const submit = (event: SyntheticEvent) => {
     event.preventDefault();
-    const form = event.target as HTMLFormElement & FormOptions;
-    const todo = {
-      title: form.title.value,
-      description: form.description.value,
-    };
-    console.log(todo);
+    console.log('Submit');
   };
 
   return (
-    <form onSubmit={submit}>
+    <form onSubmit={submit} onChange={change} className={CSS.form}>
       <InputText label="Title" id="title" />
-      <label htmlFor="description">
-        <Text type="h4">Description</Text>
-        <textarea id="description" />
-      </label>
-      <button type="submit">Create</button>
+      <InputTextArea label="Description" id="description" />
+      <Button type="submit" color="primary" disable={!canSubmit}>
+        Create
+      </Button>
     </form>
   );
 }

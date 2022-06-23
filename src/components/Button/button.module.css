@@ -30,6 +30,14 @@
   background-color: hsl(207, 90%, 60%);
 }
 
+.button[data-mode='primary']:disabled {
+  opacity: 50%;
+}
+
+.button[data-mode='primary']:disabled:hover {
+  background-color: hsl(210, 79%, 46%);
+}
+
 .button[data-mode='secondary'] {
   color: #fff;
   padding: 0.5rem;

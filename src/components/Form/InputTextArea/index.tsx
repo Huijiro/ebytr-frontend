@@ -5,27 +5,22 @@ import CSS from './input.module.css';
 interface Props {
   label: string;
   id: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const defaultProps = { onChange: () => {} };
-
-function InputText({ label, id, onChange }: Props) {
+function InputTextArea({ label, id }: Props) {
   const { mode } = useContext(ThemeContext);
   return (
     <label htmlFor={id}>
-      <input
+      <textarea
         className={CSS.input}
         id={id}
-        type="text"
         placeholder={label}
         data-mode={mode}
-        onChange={onChange}
+        rows={5}
+        cols={50}
       />
     </label>
   );
 }
 
-InputText.defaultProps = defaultProps;
-
-export default InputText;
+export default InputTextArea;
