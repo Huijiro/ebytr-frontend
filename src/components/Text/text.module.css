@@ -1,8 +1,17 @@
-.light {
+.light[data-color='primary'] {
   color: #212121;
 }
 
-.dark {
+.dark[data-color='primary'] {
   font-weight: 100;
   color: #fff;
+}
+
+.light[data-color='secondary'] {
+  color: hsl(0, 0%, 22%);
+}
+
+.dark[data-color='secondary'] {
+  font-weight: 100;
+  color: hsl(0, 0%, 80%);
 }

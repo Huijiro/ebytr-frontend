@@ -1,0 +1,15 @@
+.footer {
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.footer[data-mode='light'] {
+  background-color: hsl(0, 0%, 90%);
+}
+
+.footer[data-mode='dark'] {
+  background-color: hsl(0, 0%, 20%);
+}
