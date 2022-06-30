@@ -21,7 +21,7 @@ const RandomTasks: Task[] = [
     updatedAt: '2000-01-01T00:00:00.000Z',
     description: 'Task 2 description',
     status: {
-      id: 1,
+      id: 2,
       name: Status.ONGOING,
     },
   },
@@ -32,7 +32,7 @@ const RandomTasks: Task[] = [
     updatedAt: '2000-01-01T00:00:00.000Z',
     description: 'Task 3 description',
     status: {
-      id: 1,
+      id: 3,
       name: Status.DONE,
     },
   },

@@ -3,6 +3,7 @@ import Status from '../../../interfaces/status.interface';
 import Task from '../../../interfaces/task.interface';
 import TaskCreate from '../TaskCreate';
 import TaskDelete from '../TaskDelete';
+import TaskDetails from '../TaskDetails';
 import TaskEdit from '../TaskEdit';
 import Window from './window';
 
@@ -107,8 +108,8 @@ function TasksModalProvider({ children }: Props) {
         </Window>
       ) : null}
       {task ? (
-        <Window title="Task." setOpen={openTask}>
-          <TaskCreate />
+        <Window title="Task details." setOpen={openTask}>
+          <TaskDetails task={currentTask} />
         </Window>
       ) : null}
 

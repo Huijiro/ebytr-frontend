@@ -6,7 +6,7 @@ interface Props {
   /**
    * OnClick handler
    * */
-  onClick?: () => void;
+  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
 
   /**
    *   Content of the button

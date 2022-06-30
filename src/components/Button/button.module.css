@@ -1,3 +1,7 @@
+.button {
+  cursor: pointer;
+}
+
 .button[data-mode='light'] {
   padding: 0.5rem;
   border: 1px solid #ccc;

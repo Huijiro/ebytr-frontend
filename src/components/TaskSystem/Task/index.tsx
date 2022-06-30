@@ -13,7 +13,7 @@ interface Props {
 
 function Task({ task }: Props) {
   const { mode } = useContext(ThemeContext);
-  const { openEdit, setCurrentTask, openDelete } = useContext(TasksModalContext);
+  const { openEdit, setCurrentTask, openDelete, openTask } = useContext(TasksModalContext);
 
   const shotenDescripition = (description: string) => {
     if (description.length > 20) {
@@ -22,18 +22,32 @@ function Task({ task }: Props) {
     return description;
   };
 
-  const editTask = () => {
+  const editTask = (event: React.MouseEvent<HTMLElement>) => {
+    event.stopPropagation();
     setCurrentTask(task);
     openEdit(true);
   };
 
-  const deleteTask = () => {
+  const deleteTask = (event: React.MouseEvent<HTMLElement>) => {
+    event.stopPropagation();
     setCurrentTask(task);
     openDelete(true);
   };
 
+  const openDetails = () => {
+    setCurrentTask(task);
+    openTask(true);
+  };
+
   return (
-    <div className={CSS.container} data-mode={mode}>
+    <div
+      className={CSS.container}
+      data-mode={mode}
+      onClick={openDetails}
+      role="menuitem"
+      tabIndex={0}
+      onKeyPress={openDetails}
+    >
       <div className={CSS.head}>
         <TaskStatus status={task.status} />
         <Text type="h3">{task.title}</Text>
