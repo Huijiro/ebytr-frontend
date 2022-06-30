@@ -14,7 +14,7 @@ function TaskDelete({ task }: Props) {
   }
 
   return (
-    <div>
+    <div className={CSS.body}>
       <Text type="h3">
         Are you sure you want to delete &quot;
         {task.title}

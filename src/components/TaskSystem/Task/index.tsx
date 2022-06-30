@@ -17,7 +17,7 @@ function Task({ task }: Props) {
 
   const shotenDescripition = (description: string) => {
     if (description.length > 20) {
-      return `${description.substring(0, 20)}...`;
+      return `${description.substring(0, 30)}...`;
     }
     return description;
   };

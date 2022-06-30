@@ -39,6 +39,12 @@
   align-self: center;
 }
 
+@media only screen and (max-device-width: 640px) {
+  .body {
+    display: none;
+  }
+}
+
 .buttons {
   display: flex;
   justify-content: space-between;
