@@ -13,7 +13,7 @@ interface Props {
 
 function Task({ task }: Props) {
   const { mode } = useContext(ThemeContext);
-  const { openEdit, setCurrentTask } = useContext(TasksModalContext);
+  const { openEdit, setCurrentTask, openDelete } = useContext(TasksModalContext);
 
   const shotenDescripition = (description: string) => {
     if (description.length > 20) {
@@ -25,7 +25,11 @@ function Task({ task }: Props) {
   const editTask = () => {
     setCurrentTask(task);
     openEdit(true);
-    console.log('edit task:', task.id);
+  };
+
+  const deleteTask = () => {
+    setCurrentTask(task);
+    openDelete(true);
   };
 
   return (
@@ -39,7 +43,7 @@ function Task({ task }: Props) {
       </div>
       <div className={CSS.buttons}>
         <Button onClick={editTask}>✏️</Button>
-        <Button>🗑️</Button>
+        <Button onClick={deleteTask}>🗑️</Button>
       </div>
     </div>
   );

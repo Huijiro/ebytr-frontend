@@ -2,6 +2,7 @@ import { createContext, useMemo, useState } from 'react';
 import Status from '../../../interfaces/status.interface';
 import Task from '../../../interfaces/task.interface';
 import TaskCreate from '../TaskCreate';
+import TaskDelete from '../TaskDelete';
 import TaskEdit from '../TaskEdit';
 import Window from './window';
 
@@ -102,7 +103,7 @@ function TasksModalProvider({ children }: Props) {
       ) : null}
       {deleteTask ? (
         <Window title="Delete task." setOpen={openDelete}>
-          <TaskCreate />
+          <TaskDelete task={currentTask} />
         </Window>
       ) : null}
       {task ? (
