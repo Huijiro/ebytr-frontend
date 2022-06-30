@@ -3,6 +3,7 @@ import TaskI from '../../../interfaces/task.interface';
 import { ThemeContext } from '../../../utils/themeContext';
 import Button from '../../Button';
 import Text from '../../Text';
+import { TasksModalContext } from '../TaskModals';
 import TaskStatus from '../TaskStatus';
 import CSS from './task.module.css';
 
@@ -12,12 +13,19 @@ interface Props {
 
 function Task({ task }: Props) {
   const { mode } = useContext(ThemeContext);
+  const { openEdit, setCurrentTask } = useContext(TasksModalContext);
 
   const shotenDescripition = (description: string) => {
     if (description.length > 20) {
       return `${description.substring(0, 20)}...`;
     }
     return description;
+  };
+
+  const editTask = () => {
+    setCurrentTask(task);
+    openEdit(true);
+    console.log('edit task:', task.id);
   };
 
   return (
@@ -30,7 +38,7 @@ function Task({ task }: Props) {
         <Text type="p">{shotenDescripition(task.description)}</Text>
       </div>
       <div className={CSS.buttons}>
-        <Button>✏️</Button>
+        <Button onClick={editTask}>✏️</Button>
         <Button>🗑️</Button>
       </div>
     </div>

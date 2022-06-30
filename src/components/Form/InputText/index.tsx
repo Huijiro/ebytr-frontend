@@ -3,18 +3,22 @@ import { ThemeContext } from '../../../utils/themeContext';
 import CSS from './input.module.css';
 
 interface Props {
+  value: string;
   label: string;
   id: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  err: string;
 }
 
 const defaultProps = { onChange: () => {} };
 
-function InputText({ label, id, onChange }: Props) {
+function InputText({ value, label, id, err, onChange }: Props) {
   const { mode } = useContext(ThemeContext);
   return (
-    <label htmlFor={id}>
+    <label htmlFor={id} className={CSS.label}>
+      {err ? <span className={CSS.error}>{err}</span> : null}
       <input
+        value={value}
         className={CSS.input}
         id={id}
         type="text"

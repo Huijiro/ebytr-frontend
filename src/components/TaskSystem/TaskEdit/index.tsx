@@ -1,8 +1,10 @@
 import { SyntheticEvent, useEffect, useState } from 'react';
+import Task from '../../../interfaces/task.interface';
 import Button from '../../Button';
 import InputText from '../../Form/InputText';
 import InputTextArea from '../../Form/InputTextArea';
-import CSS from './create.module.css';
+import Select from '../../Form/Select';
+import CSS from './edit.module.css';
 
 interface FormOptions {
   title: {
@@ -13,12 +15,31 @@ interface FormOptions {
     value: string;
     error: string;
   };
+  status: {
+    value: number;
+  };
 }
 
-function TaskCreate() {
+const statusOptions = [
+  {
+    value: 1,
+    label: 'To do',
+  },
+  {
+    value: 2,
+    label: 'In progress',
+  },
+  {
+    value: 3,
+    label: 'Done',
+  },
+];
+
+function TaskEdit({ task }: { task: Task }) {
   const [form, setForm] = useState<FormOptions>({
-    title: { value: '', error: '' },
-    description: { value: '', error: '' },
+    title: { value: task.title, error: '' },
+    description: { value: task.description, error: '' },
+    status: { value: task.status.id },
   });
 
   const [canSubmit, setCanSubmit] = useState(false);
@@ -66,16 +87,18 @@ function TaskCreate() {
         value={form.title.value}
       />
       <InputTextArea
-        value={form.description.value}
         label="Description"
         id="description"
+        value={form.description.value}
         err={form.description.error}
       />
+
+      <Select id="status" options={statusOptions} />
       <Button type="submit" color="primary" disable={!canSubmit}>
-        Create
+        Edit
       </Button>
     </form>
   );
 }
 
-export default TaskCreate;
+export default TaskEdit;

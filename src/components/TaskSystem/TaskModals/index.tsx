@@ -1,5 +1,8 @@
 import { createContext, useMemo, useState } from 'react';
+import Status from '../../../interfaces/status.interface';
+import Task from '../../../interfaces/task.interface';
 import TaskCreate from '../TaskCreate';
+import TaskEdit from '../TaskEdit';
 import Window from './window';
 
 interface Modal {
@@ -26,6 +29,13 @@ interface Modal {
 
   /* Task window toggle */
   openTask: (isOpen: boolean) => void;
+
+  /* Task id */
+  currentTask: Task;
+
+  /* Set task id */
+
+  setCurrentTask: (task: Task) => void;
 }
 
 const TasksModalContext = createContext<Modal>({
@@ -37,6 +47,13 @@ const TasksModalContext = createContext<Modal>({
   openDelete: () => {},
   task: false,
   openTask: () => {},
+  currentTask: {
+    id: 0,
+    title: '',
+    description: '',
+    status: { id: 0, name: Status.TODO },
+  },
+  setCurrentTask: () => {},
 });
 
 interface Props {
@@ -48,6 +65,12 @@ function TasksModalProvider({ children }: Props) {
   const [edit, openEdit] = useState(false);
   const [deleteTask, openDelete] = useState(false);
   const [task, openTask] = useState(false);
+  const [currentTask, setCurrentTask] = useState({
+    id: 0,
+    title: '',
+    description: '',
+    status: { id: 0, name: Status.TODO },
+  });
 
   const value = useMemo(
     () => ({
@@ -59,6 +82,8 @@ function TasksModalProvider({ children }: Props) {
       openDelete,
       task,
       openTask,
+      currentTask,
+      setCurrentTask,
     }),
     [create],
   );
@@ -72,7 +97,7 @@ function TasksModalProvider({ children }: Props) {
       ) : null}
       {edit ? (
         <Window title="Edit task." setOpen={openEdit}>
-          <TaskCreate />
+          <TaskEdit task={currentTask} />
         </Window>
       ) : null}
       {deleteTask ? (

@@ -26,3 +26,15 @@
   color: hsl(0, 0%, 80%);
   font-weight: 100;
 }
+
+.label {
+  display: flex;
+  flex-direction: column;
+}
+
+.error {
+  color: hsl(0, 100%, 60%);
+  font-size: 0.8em;
+  font-weight: 100;
+  margin-top: 0.5em;
+}
