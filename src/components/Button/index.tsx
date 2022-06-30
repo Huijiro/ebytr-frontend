@@ -6,7 +6,7 @@ interface Props {
   /**
    * OnClick handler
    * */
-  onClick?: () => void;
+  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
 
   /**
    *   Content of the button
@@ -24,15 +24,38 @@ interface Props {
    * */
 
   size?: 'small' | 'medium' | 'large';
+
+  /* Type of the button */
+
+  type?: 'button' | 'submit' | 'reset';
+
+  /* Disable the button */
+
+  disable?: boolean;
+
+  /* Class name */
+
+  className?: string;
 }
 
 const defaultProps = {
   onClick: () => {},
   size: 'medium',
   color: undefined,
+  type: 'button',
+  disable: false,
+  className: '',
 };
 
-function Button({ onClick, children, size, color }: Props) {
+function Button({
+  onClick,
+  children,
+  size,
+  color,
+  type,
+  disable,
+  className,
+}: Props) {
   const { mode } = useContext(ThemeContext);
 
   return (
@@ -40,8 +63,10 @@ function Button({ onClick, children, size, color }: Props) {
       onClick={onClick}
       data-mode={color || mode}
       style={{ fontSize: size }}
-      className={CSS.button}
-      type="button"
+      className={`${className} ${CSS.button}`}
+      // eslint-disable-next-line react/button-has-type
+      type={type}
+      disabled={disable}
     >
       <div>{children}</div>
     </button>

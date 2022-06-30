@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { TasksModalProvider } from '../TaskModals';
 import { ThemeContext } from '../../../utils/themeContext';
 import TasksHeader from '../TasksHeader';
 import TasksList from '../TasksList';
@@ -8,8 +9,10 @@ function TasksContainer() {
   const { mode } = useContext(ThemeContext);
   return (
     <div className={CSS.container} data-mode={mode}>
-      <TasksHeader />
-      <TasksList />
+      <TasksModalProvider>
+        <TasksHeader />
+        <TasksList />
+      </TasksModalProvider>
     </div>
   );
 }

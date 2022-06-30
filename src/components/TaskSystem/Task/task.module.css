@@ -4,16 +4,25 @@
   display: flex;
   justify-content: space-between;
   align-items: stretch;
+  cursor: pointer;
 }
 
 .container[data-mode='light'] {
   background-color: #fff;
   border: 1px solid hsl(0, 0%, 80%);
 }
+.container[data-mode='light']:hover {
+  background-color: hsl(0, 0%, 85%);
+  border: 1px solid hsl(0, 0%, 80%);
+}
 
 .container[data-mode='dark'] {
   background-color: hsl(0, 0%, 30%);
   border: 1px solid hsl(0, 0%, 40%);
+}
+
+.container[data-mode='dark']:hover {
+  background-color: hsl(0, 0%, 40%);
 }
 
 .head {
@@ -28,6 +37,12 @@
 .body {
   padding: 0.5em 0;
   align-self: center;
+}
+
+@media only screen and (max-device-width: 640px) {
+  .body {
+    display: none;
+  }
 }
 
 .buttons {

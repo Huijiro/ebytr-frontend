@@ -1,0 +1,26 @@
+select[data-mode='light'] {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0 0.25em;
+  font-size: 1rem;
+  color: #333;
+  background-color: #fff;
+}
+
+select[data-mode='dark'] {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0 0.25em;
+  font-size: 1rem;
+  color: #fff;
+  background-color: hsl(0, 0%, 35%);
+}
+
+select[data-mode='dark']:focus {
+  border: 1px solid hsl(0, 0%, 80%);
+  background-color: hsl(0, 0%, 30%);
+}

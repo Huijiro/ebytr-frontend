@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
 interface Context {
   /**
@@ -22,7 +22,10 @@ interface Props {
 }
 
 function ThemeProvider({ children }: Props) {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState(() => {
+    const storageTheme = localStorage.getItem('theme');
+    return storageTheme || 'light';
+  });
 
   const value = useMemo(
     () => ({
@@ -31,6 +34,10 @@ function ThemeProvider({ children }: Props) {
     }),
     [theme],
   );
+
+  useEffect(() => {
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
   return (
     <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>

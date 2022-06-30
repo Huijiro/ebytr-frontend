@@ -1,0 +1,46 @@
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  grid-template-columns: 1em 1fr;
+  gap: 0.5em;
+  min-height: 100%;
+}
+
+.body {
+  padding: 1rem 0;
+  align-self: center;
+  width: 70vw;
+}
+
+.done {
+  background-color: hsl(100, 60%, 50%);
+  border: 1px solid hsl(100, 60%, 45%);
+  padding: 0.25rem;
+  color: hsl(100, 60%, 20%);
+  border-radius: 5px;
+}
+
+.onGoing {
+  background-color: hsl(200, 60%, 50%);
+  border: 1px solid hsl(200, 60%, 45%);
+  padding: 0.25rem;
+  color: hsl(200, 60%, 20%);
+  border-radius: 5px;
+}
+
+.toDo {
+  background-color: hsl(0, 60%, 50%);
+  border: 1px solid hsl(0, 60%, 45%);
+  padding: 0.25rem;
+  color: hsl(0, 60%, 20%);
+  border-radius: 5px;
+}
+
+.error {
+  background-color: hsl(60, 60%, 50%);
+  border: 1px solid hsl(60, 60%, 45%);
+  padding: 0.25rem;
+  color: hsl(60, 60%, 20%);
+  border-radius: 5px;
+}

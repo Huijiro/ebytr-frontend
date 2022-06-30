@@ -1,6 +1,4 @@
 .container {
-  margin: 2em 6em;
-  border-radius: 0.2em;
   padding: 1em;
   flex-grow: 1;
 }

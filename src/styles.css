@@ -4,7 +4,12 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
-  transition: all 300ms;
+  transition-property: background-color, color, border-color, box-shadow;
+  transition-duration: 0.2s;
+}
+
+*:focus {
+  outline: none;
 }
 
 html,

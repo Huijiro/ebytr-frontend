@@ -1,0 +1,10 @@
+.body {
+  width: 70vw;
+}
+
+.buttonArea {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
