@@ -18,8 +18,8 @@ function InputText({ value, label, id, err, onChange }: Props) {
     <label htmlFor={id} className={CSS.label}>
       {err ? <span className={CSS.error}>{err}</span> : null}
       <input
-        value={value}
         className={CSS.input}
+        defaultValue={value}
         id={id}
         type="text"
         placeholder={label}

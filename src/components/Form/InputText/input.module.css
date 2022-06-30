@@ -13,6 +13,7 @@
 }
 
 .input[data-mode='dark'] {
+  color: hsl(0, 0%, 90%);
   background-color: hsl(0, 0%, 35%);
   border: 1px solid hsl(0, 0%, 45%);
 }

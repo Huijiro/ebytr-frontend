@@ -1,6 +1,8 @@
 .input {
   font-size: 1.25em;
   padding: 0.2em;
+  width: 70vw;
+  height: 40vh;
 }
 
 .input[data-mode='light'] {
@@ -13,6 +15,7 @@
 }
 
 .input[data-mode='dark'] {
+  color: hsl(0, 0%, 90%);
   background-color: hsl(0, 0%, 35%);
   border: 1px solid hsl(0, 0%, 45%);
 }
