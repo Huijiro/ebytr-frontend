@@ -9,14 +9,16 @@ function TasksHeader() {
   return (
     <div className={CSS.header}>
       <Text type="h2">Tasks</Text>
-      <Button
-        color="primary"
-        onClick={() => {
-          openCreate(true);
-        }}
-      >
-        Add Task
-      </Button>
+      <div className={CSS.buttons}>
+        <Button
+          color="primary"
+          onClick={() => {
+            openCreate(true);
+          }}
+        >
+          Add Task
+        </Button>
+      </div>
     </div>
   );
 }

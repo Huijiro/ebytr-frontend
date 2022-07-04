@@ -73,9 +73,20 @@ function TaskEdit({ task }: { task: Task }) {
     );
   }, [form.title.value, form.description.value]);
 
-  const submit = (event: SyntheticEvent) => {
-    event.preventDefault();
-    console.log('Submit');
+  const submit = async () => {
+    try {
+      await fetch(`/api/tasks/${task.id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          title: form.title.value,
+          description: form.description.value,
+          statusId: form.status.value,
+        }),
+      });
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (

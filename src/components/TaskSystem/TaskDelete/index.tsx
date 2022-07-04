@@ -8,10 +8,11 @@ interface Props {
 }
 
 function TaskDelete({ task }: Props) {
-  function deleteTask() {
-    console.log('delete task:', task.id);
+  const deleteTask = async () => {
+    console.log('delete task', task.id);
+    await fetch(`/api/tasks/${task.id}`, { method: 'DELETE' });
     document.location.reload();
-  }
+  };
 
   return (
     <div className={CSS.body}>
