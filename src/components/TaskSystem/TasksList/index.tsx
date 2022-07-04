@@ -8,7 +8,15 @@ import CSS from './tasksList.module.css';
 function TasksList() {
   const [tasks, setTasks] = useState<TaskI[]>(RandomTasks);
 
-  useEffect(() => {}, []);
+  const FetchTasks = async () => {
+    const response = await fetch('/api/tasks');
+    const data = await response.json();
+    setTasks(data);
+  };
+
+  useEffect(() => {
+    FetchTasks();
+  }, []);
 
   return (
     <div className={CSS.container}>
