@@ -7,6 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
+        // Change this address if your API is not in local or in port 4000.
         target: 'http://localhost:4000',
         changeOrigin: true,
       },

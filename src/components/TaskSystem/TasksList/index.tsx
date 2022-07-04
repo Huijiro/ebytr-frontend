@@ -2,11 +2,10 @@ import { useEffect, useState } from 'react';
 import TaskI from '../../../interfaces/task.interface';
 import Text from '../../Text';
 import Task from '../Task';
-import RandomTasks from './mock';
 import CSS from './tasksList.module.css';
 
 function TasksList() {
-  const [tasks, setTasks] = useState<TaskI[]>(RandomTasks);
+  const [tasks, setTasks] = useState<TaskI[]>([]);
 
   const FetchTasks = async () => {
     const response = await fetch('/api/tasks');
